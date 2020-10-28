@@ -1,0 +1,271 @@
+CREATE TABLE tab_barrio
+	(
+	id_bar integer NOT NULL,
+	codpos_bar bigint NOT NULL,
+	nom_bar character varying(30) NOT NULL,
+	est_bar character(1),
+	fk_cod_ciu integer NOT NULL,
+
+	CONSTRAINT pk_barrio PRIMARY KEY (id_bar),
+	CONSTRAINT fk_bar_ciu FOREIGN KEY (fk_cod_ciu)
+		REFERENCES tab_ciudad (cod_ciu)
+	);
+
+CREATE TABLE tab_ciudad
+	(
+	cod_ciu integer NOT NULL,
+	nom_ciu character varying(30) NOT NULL,
+
+	CONSTRAINT pk_ciudad PRIMARY KEY (cod_ciu),
+	CONSTRAINT uk_nom_ciu UNIQUE (nom_ciu)
+	);
+
+
+CREATE TABLE tab_contrato
+	(
+	id_con integer NOT NULL,
+	hortra_con integer NOT NULL,
+	pag_con integer NOT NULL,
+	fecini_con date NOT NULL,
+	dia_con integer NOT NULL,
+	fk_ced_per integer NOT NULL,
+	fk_nit_emp integer NOT NULL,
+	fk_cod_vig integer NOT NULL,
+
+	CONSTRAINT pk_contrato PRIMARY KEY (id_con),
+	CONSTRAINT fk_con_emp FOREIGN KEY (fk_nit_emp)
+		REFERENCES tab_empresa (nit_emp),
+	CONSTRAINT fk_con_per FOREIGN KEY (fk_ced_per)
+		REFERENCES tab_personanatural (ced_per),
+	CONSTRAINT fk_con_vig FOREIGN KEY (fk_cod_vig)
+		REFERENCES tab_vigilante (cod_vig)
+	);
+
+
+CREATE TABLE tab_empresa
+	(
+	nit_emp bigint NOT NULL,
+	nom_emp character varying(30) NOT NULL,
+	cel_emp character varying(20),
+	tel_emp character vayying(20) NOT NULL,
+	dir_emp character varying(30) NOT NULL,
+	fk_cod_ciu2 integer NOT NULL,
+
+	CONSTRAINT pk_empresa PRIMARY KEY (nit_emp),
+	CONSTRAINT uk_nom_emp UNIQUE (nom_emp),
+	CONSTRAINT fk_emp_ciu FOREIGN KEY (fk_cod_ciu2)
+		REFERENCES tab_ciudad (cod_ciu)
+	);
+
+
+CREATE TABLE tab_garantia
+	(
+	tie_gar character varying(30),
+	val_gar bigint,
+	fk_cod_pro integer,
+
+	CONSTRAINT fk_gar_pro FOREIGN KEY (fk_cod_pro)
+		REFERENCES tab_producto (cod_pro)
+	);
+
+
+CREATE TABLE tab_personanatural
+	(
+	ced_per bigint NOT NULL,
+	tel_per bigint,
+	dir_per character varying(40) NOT NULL,
+	ape_per character varying(30) NOT NULL,
+	nom_per character varying(30) NOT NULL,
+	gen_per character(1) NOT NULL,
+	fechnac_per date NOT NULL,
+	eda_per character(3) NOT NULL,
+	cel_per character varying(30) NOT NULL,
+	fk_cod_ciu3 integer NOT NULL,
+	fk_id_bar integer NOT NULL,
+	
+	CONSTRAINT chk_personanatural_gen CHECK (gen_per='F' or gen_per='M' or gen_per='O'),
+	CONSTRAINT pk_personanatural PRIMARY KEY (ced_per),
+	CONSTRAINT fk_per_bar FOREIGN KEY (fk_id_bar)
+		REFERENCES tab_barrio (id_bar),
+	CONSTRAINT fk_per_ciu FOREIGN KEY (fk_cod_ciu3)
+		REFERENCES tab_ciudad (cod_ciu)
+	);
+
+
+CREATE TABLE tab_producto
+	(
+	cod_pro integer NOT NULL,
+	unidis_pro integer NOT NULL,
+	nom_pro character varying(150) NOT NULL,
+	cosiva_pro bigint NOT NULL,
+	cosbas_pro bigint NOT NULL,
+
+	CONSTRAINT pk_producto PRIMARY KEY (cod_pro)
+	);
+
+
+CREATE TABLE tab_producto_proveedor
+	(
+	fk_id_prov integer NOT NULL,
+	fk_cod_pro integer NOT NULL,
+
+	CONSTRAINT fk_produc_prove_prov FOREIGN KEY (fk_id_prov)
+		REFERENCES tab_proveedor (id_prov),
+	CONSTRAINT fk_produc_prove_pro FOREIGN KEY (fk_cod_pro)
+		REFERENCES tab_producto (cod_pro)
+	);
+
+
+CREATE TABLE tab_proveedor
+	(
+	id_prov integer NOT NULL,
+	nom_prov character varying(50) NOT NULL,
+	pais_prov character varying(50) NOT NULL,
+
+	CONSTRAINT pk_proveedor PRIMARY KEY (id_prov)
+	);
+
+
+CREATE TABLE tab_recibo
+	(
+	cod_rec integer NOT NULL,
+	can_rec integer NOT NULL,
+	medpag_rec character varying(15) NOT NULL,
+	costot_rec bigint NOT NULL,
+	procom_rec character varying(500) NOT NULL,
+	fk_ced_per2 integer NOT NULL,
+	fk_nit_emp2 bigint NOT NULL,
+	fk_cod_pro integer NOT NULL,
+
+	CONSTRAINT pk_recibo PRIMARY KEY (cod_rec),
+	CONSTRAINT fk_rec_emp FOREIGN KEY (fk_nit_emp2)
+		REFERENCES tab_empresa (nit_emp),
+	CONSTRAINT fk_rec_per FOREIGN KEY (fk_ced_per2)
+		REFERENCES tab_personanatural (ced_per),
+	CONSTRAINT fk_rec_pro FOREIGN KEY (fk_cod_pro)
+		REFERENCES tab_producto (cod_pro)
+	CONSTRAINT ch_medpag_rec CHECK (medpag_rec = 'E' OR medpag_rec = 'D' OR medpag_rec = 'C')
+	);
+
+
+CREATE TABLE tab_vigilante
+	(
+   	cod_vig integer NOT NULL,
+    	cel_vig character varying(20)  NOT NULL,
+    	eda_vig character(3) NOT NULL,
+   	fecnac_vig date NOT NULL,
+    	ape_vig character varying(30) NOT NULL,
+   	nom_vig character varying(30) NOT NULL,
+    	ced_vig bigint NOT NULL,
+    	tel_vig bigint NOT NULL,
+    	jor_vig character(1) NOT NULL,
+    	fk_id_con integer NOT NULL,
+	gen_vig CHAR(1)
+    	
+	CONSTRAINT chk_gen_vig CHECK (gen_vig='F' or gen_vig='M' or gen_vig='O'),
+	CONSTRAINT chk_vigilante_jor CHECK (jor_vig='D' or jor_vig='N'),
+	CONSTRAINT pk_vigilante PRIMARY KEY (cod_vig),
+    	CONSTRAINT uk_ced_vig UNIQUE (ced_vig),
+
+    	CONSTRAINT fk_vig_con FOREIGN KEY (fk_id_con)
+        	REFERENCES tab_contrato (id_con) 
+	);
+
+CREATE TABLE tab_vigilante_capacitacion
+	(
+	fk_cod_vig2 integer NOT NULL,
+	fk_cod_cap integer NOT NULL,
+
+	CONSTRAINT fk_vigilan_capaci_vig FOREIGN KEY (fk_cod_vig2)
+		REFERENCES tab_vigilante (cod_vig),
+	CONSTRAINT fk_vigilan_capaci_cap FOREIGN KEY (fk_cod_cap)
+		REFERENCES tab_capacitacion (cod_cap)
+	);
+
+
+CREATE TABLE tab_incidente
+	(
+	num_inc integer NOT NULL,
+	hor_inc date NOT NULL,
+	desc_inc character varying(300) NOT NULL,
+	fec_inc date NOT NULL,
+	fk_cod_vig3 integer NOT NULL,
+
+	CONSTRAINT pk_incidente PRIMARY KEY (num_inc),
+	CONSTRAINT fk_incidente_vigilante FOREIGN KEY (fk_cod_vig3)
+		REFERENCES tab_vigilante (cod_vig)
+	);
+
+      
+CREATE TABLE tab_empleado
+	(
+   	cod_emp integer NOT NULL,
+    	cel_emp character varying(20)  NOT NULL,
+    	eda_emp character(3) NOT NULL,
+   	fecnac_emp date NOT NULL,
+	gen_emp character(1) NOT NULL,
+    	ape_emp character varying(30) NOT NULL,
+   	nom_emp character varying(30) NOT NULL,
+    	ced_emp bigint NOT NULL,
+    	tel_emp bigint NOT NULL,
+    	
+    	CONSTRAINT chk_empleado_gen CHECK (gen_emp='F' or gen_emp='M' or gen_emp='O'),
+	CONSTRAINT pk_emp PRIMARY KEY (cod_emp),
+    	CONSTRAINT uk_ced_emp UNIQUE (ced_emp)
+	);
+
+
+CREATE TABLE tab_empleado_capacitacion
+	(
+	fk_cod_emp2 integer NOT NULL,
+	fk_cod_cap2 integer NOT NULL,
+
+	CONSTRAINT fk_emplea-capaci_emp FOREIGN KEY (fk_cod_emp2)
+		REFERENCES tab_empleado (cod_emp),
+	CONSTRAINT fk_emplea-capaci_cap FOREIGN KEY (fk_cod_cap2)
+		REFERENCES tab_capacitacion (cod_cap)
+	);
+
+
+CREATE TABLE tab_capacitacion
+	(
+	cod_cap integer NOT NULL,
+	tit_cap character varying(150) NOT NULL,
+	hortra_cap integer NOT NULL,
+
+	CONSTRAINT pk_capacitacion PRIMARY KEY (cod_cap),
+	CONSTRAINT uk_tit_cap UNIQUE (tit_cap)
+	);
+
+CREATE TABLE tab_recibo_producto (
+
+	can_pro_rec INTEGER NOT NULL,
+	fk_cod_rec INTEGER NOT NULL,
+	fk_cod_pro INTEGER NOT NULL,
+	
+	CONSTRAINT fk_recibo_producto_recibo FOREIGN KEY (fk_cod_rec)
+		REFERENCES tab_recibo (cod_rec),
+	CONSTRAINT fk_recibo_producto_producto FOREIGN KEY (FK_cod_pro)
+		REFERENCES tab_producto (cod_pro)
+
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

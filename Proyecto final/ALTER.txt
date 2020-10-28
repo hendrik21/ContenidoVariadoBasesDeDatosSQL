@@ -1,0 +1,16 @@
+ALTER TABLE tab_personanatural	
+
+ADD CONSTRAINT chk_personanatural_gen CHECK(gen_per='F' or gen_per='M' or gen_per='O'),
+
+ALTER TABLE tab_recibo
+
+ADD CONSTRAINT ch_medpag_rec CHECK (medpag_rec = 'E' OR medpag_rec = 'D' OR medpag_rec = 'C')
+
+ALTER TABLE tab_vigilante
+
+ADD CONSTRAINT chk_gen_vig CHECK (gen_vig='F' or gen_vig='M' or gen_vig='O'),
+ADD CONSTRAINT chk_vigilante_jor CHECK (jor_vig='D' or jor_vig='N'),
+
+ALTER TABLE tab_empleado
+
+ADD CONSTRAINT chk_empleado_gen CHECK(gen_emp ='F' OR gen_emp ='M' OR gen_emp = 'O'),

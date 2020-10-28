@@ -1,0 +1,10 @@
+INSERT INTO tab_empleado (cod_emp,ced_emp,tel_emp,cel_emp,fecnac_emp,gen_emp,ape_emp,nom_emp)
+VALUES
+(1,100743174,6943279,'3118728538','1976-05-18','F','Serrano Martinez','Laura Marcela'),
+(2,6402253710,6770563,'3123320476','1989-09-12','M','Moreno Afanador','Rodrigo'),
+(3,785710243,6678157,'3195625220','1986-01-23','O','Arias Barrera','Emma Fernanda'),
+(4,7802955818,6633487,'3137420445','1990-10-30','F','Suárez Ardila','Anastasia'),
+(5,4800023861,6793193,'3185065824','1979-12-20','M','Afanador Arango','Camilo Andrés'),
+(6,4296362034,6557916,'3162473822','1981-03-05','M','Velasco Tovar','Juan Ernesto'),
+(7,8133508295,6992587,'3182014126','1978-04-09','F','Barrios Galeano','Mariana'),
+(8,2037954896,6440348,'3140346636','1993-08-13','F','Maldonado León','Silvia Alejandra')

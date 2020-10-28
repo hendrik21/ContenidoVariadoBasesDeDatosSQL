@@ -1,0 +1,6 @@
+INSERT INTO tab_proveedor (id_prov,nom_prov,pais_prov) 
+VALUES
+(1,'Dragon Safety','E.E.U.U'),
+(2,'American Chemicals','E.E.U.U'),
+(3,'ELECTRONICOS OMEGA','Colombia'),
+(4,'Dynamo Electronics S.A.S','Chile')

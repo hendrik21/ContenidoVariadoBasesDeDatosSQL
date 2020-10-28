@@ -1,0 +1,17 @@
+INSERT INTO tab_capacitacion (cod_cap,tit_cap,hor_cap)
+VALUES 
+(1,'Primeros auxilios',20),
+(2,'Defensa personal',60),
+(3,'Seguridad técnica',15),
+(4,'Manejo de armas',36),
+(5,'Codigo penal',52),
+(6,'Contabilidad',100),
+(7,'Ofimática', 20)
+
+INSERT INTO tab_personanatural (ced_per,tel_per,dir_per,ape_per,nom_per,fechnac_per,
+							   cel_per,fk_cod_ciu3,fk_id_bar)
+VALUES
+(4152929265,68785450,'Cll 43 # 38-18','Gonzales Mendoza','Juan Carlos', '1980-03-04','3152393197',1,1),
+(1072582131,62969482,'Cra 69 # 66-6 Torre F Apto 420' ,'Romero Contreraz','Carmelo','1972-01-10','3180398124',1,3),
+(2873469827,68407286,'Cra 30 # 27-7','Gomes Saavedra','Ana María','1982-10-05','3167828441',1,2)
+(6327776242,63136009,'Cll 23 # 45-67','Ospina Mendivelso','Julian Andrés','1990-09-02','3178118819',4)

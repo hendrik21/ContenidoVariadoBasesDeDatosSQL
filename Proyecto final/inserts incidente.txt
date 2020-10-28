@@ -1,0 +1,6 @@
+INSERT INTO tab_incidente (num_inc,desc_inc,fec_inc,fk_cod_vig3)
+VALUES
+(1,'Aproximadamente a las 11 p.m. un sujeto se acercó ebrio a la vivienda que resguardaba Emmanuel Castro Jimenez. Hubo amenazas de vandalismo por parte del sujeto en estado de alicoramiento, luego Castro lo neutralizó por fuerza bruta. El sujeto tuvo una hospitalización menor.','2017-05-03',11),
+(2,'Debido a un altercado entre el señor Carmelo Romero Contreraz y su pareja, el vigilante Míguel Ángel Torres fue agredido física y verbalmente por parte de la señora.','2009-12-10',22),
+(3,'Tras un intento de robo a mano armada en el establecimiento que vigilaba el señor Santiago Escobar, hubo un intercambio de disparos donde el delincuente terminó hospitalizado.','2010-01-31',88),
+(4,'Después de un intento de robo con arma blanca al establecimiento que vigilaba el señor Sebastián Quintero Restrepo, el vigilante neutralizó al delincuente con una pistola taser.','2014-03-11',110)

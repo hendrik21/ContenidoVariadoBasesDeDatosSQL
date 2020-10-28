@@ -1,0 +1,162 @@
+INSERT INTO tab_vigilante (cod_vig,cel_vig,fecnac_vig,ape_vig,nom_vig,ced_vig,tel_vig,jor_vig,fk_id_con)
+VALUES
+(11,'3142887766','1978,04-11','Castro Jimenez','Emmanuel',9017040239,6596288,'D',11),
+(22,'3157246300','1980-10-19','Torres Rojas','Miguel Ángel',8514091119,6851813,'N',10),
+(33,'3185909658','1975-03-21','Giraldo Morales','Samuel David',5115909942,6380520,'N',9),
+(44,'3165652571','1991-05-02','Parra Jaramillo','Juan Diego',626301353,6362891,'N',8),
+(55,'3154792070','1989-07-18','Suárez Romero','Maximiliano',192850161,6858014,'D',7),
+(66,'3141966513','1992-03-27','Montoya Cortés','Andrés Felipe',2158636104,6849800,'D',6),
+(77,'3130366905','1979-12-17','Mejía Arias','Jerónimo',9205561174,6641849,'N',5),
+(88,'3176020883','1987-02-10','Escobar Velásquez','Santiago',7044010179,6577588,'D',4),
+(99,'3143029116','1981-06-29','Flórez Medina','Juan Pablo',8371746035,6007457,'N',3),
+(110,'3123341412','1984-08-13','Quintero Restrepo','Sebastián Camilo',3962352361,6370533,'D',2),
+(111,'3179034526','1990-10-24','Correa Marín','Juan José',9956660880,6073887,'N',1)
+
+
+
+Santiago
+
+Matías
+
+Samuel
+
+Jerónimo
+
+Emmanuel
+
+Emiliano
+
+Maximiliano
+
+Mathias
+
+Sebastián
+
+Martín
+
+
+
+
+
+Juan José
+
+Miguel Angel
+
+Juan Sebastián
+
+Juan David
+
+Samuel David
+
+Juan Pablo
+
+Andrés Felipe
+
+Juan Esteban
+
+Juan Diego
+
+Angel David
+
+
+-------------------------
+
+Rodríguez           765,181
+
+2             Gómez               662,393 
+
+3             López                   553,665
+
+4             González             545,769
+
+5             García                  532,510
+
+6             Martínez             512,176
+
+7             Ramírez               468,259
+
+8             Sánchez               468,067
+
+9             Hernández         431,434
+
+10           Díaz                      431,381
+
+11           Pérez                   428,220
+
+12           Torres                  365,261
+
+13           Rojas                   354,448 
+
+14           Vargas               317,273 
+
+15           Moreno               314,146
+
+16           Gutiérrez            278,946
+
+17           Jiménez               270,928
+
+18           Muñoz               270,753 
+
+19           Castro                 266,403 
+
+20           Ortiz                    265,425 
+
+21           Álvarez                243,414
+
+22           Ruiz                      239,169
+
+23           Suárez                 234,837
+
+24           Romero               228,199
+
+25           Herrera               221,333
+
+26           Valencia              210,957
+
+27           Quintero             209,751
+
+28           Restrepo             208,127
+
+29           Giraldo                205,751
+
+30           Morales               203,986
+
+31           Mejía                  197,208
+
+32           Arias                   182,063
+
+33           Parra                   178,831
+
+34           Jaramillo             173,922
+
+35           Cárdenas            172,595
+
+36           Osorio                 170,079
+
+37           Castillo                169,293
+
+38           Salazar                 168,978
+
+39           Cardona              164,506
+
+40           Flórez                  161,903
+
+41           Medina                 161,275
+
+42           Rivera                  159,178
+
+43           Montoya             158,462
+
+44           Cortes                156,366 
+
+45           Correa                 156,051
+
+46           Marín                  155,702
+
+47           Rincón                 153,815
+
+48           Zapata                 152,977
+
+49           Escobar               150,286
+
+50           Velásquez           148,924

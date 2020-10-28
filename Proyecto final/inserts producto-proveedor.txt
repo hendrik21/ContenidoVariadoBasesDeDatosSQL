@@ -1,0 +1,16 @@
+INSERT INTO tab_producto_proveedor (fk_id_prov,fk_cod_pro)
+VALUES
+(1,2),
+(1,5),
+(1,6),
+(1,7),
+(2,5),
+(3,10),
+(3,2),
+(3,3),
+(4,2),
+(4,4),
+(4,8),
+(4,9),
+(4,10)
+

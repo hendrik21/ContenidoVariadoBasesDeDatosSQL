@@ -1,0 +1,23 @@
+INSERT INTO tab_recibo (cod_rec,medpag_rec,fk_ced_per2,fk_nit_emp2)
+
+VALUES
+
+(1,'E',257955824,null), --gas pimienta
+(2,'D,1875264271,null), --gas pimienta y alarma de mano
+(3,'E',2873469827,null), --alarma de mano
+(4,'C',6991050035,null), --2 taser
+(5,'E',6873449505,null), --2 gas pimienta
+(6,'D',5023039106,null), --gas pimienta y taser
+(7,'C',null,9332305273), -- 5 camaras de seguridad
+(8,'C',null,5176022659), --2 tambos, radios, Llave digital
+(9,'C',null,8463449367), --4 antibalas
+(10,'C',null,9531373758), -- radios, sensor de movimiento, alarma de puerta
+(11,'C',null,4801229180), --4 camaras de seguridad
+(12,'C',null,6697226913), --2 alarma de puerta, 2 radios, 2 camaras seguridad
+(13,'C',null,2387201901) -- 2 antibalas, 3 camaras, 2 tambos, 1 llave digital
+
+
+
+
+
+

@@ -1,0 +1,12 @@
+INSERT INTO tab_producto (cod_pro,unidis_pro,nom_pro,cosbas_pro)
+VALUES
+(1,57,'Avenger Defense Stun Gun',39000),
+(2,26,'Reolink PoE IP Camera Outdoor 5MP Video Surveillance Home Security',285000),
+(3,15,'WECLUB 130dB Safety Alarm Keychain Security Emergency Alarm',32000),
+(4,12,'Ultraloq UL3 BT',450000),
+(5,143,'Police Magnum 2 Pepper Spray 1/2oz ',36000),
+(6,79,'Baston Tomfa 4',41000),
+(7,20,'Senken FDY3R-SK04B body armor',750000),
+(8,31,'J.LUMI YCA1050 PIR Motion Sensor Light Switch',27500),
+(9,17,'Safety Technology International Inc. STI-6400 Exit Stopper Multifunction Door Alarm',325000),
+(10,91,'Arcshell AR-5 Walkie Talkies',267000)
